@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { BigNumber, ethers } from 'ethers';
 import abi from '../diamondABI/diamond.json';
 import { Header } from './Header';
+import { Footer } from './Footer';
 import { Loading } from './Loading';
 import { Listings } from './Listings';
 import { NoListings } from './NoListings';
@@ -162,6 +163,7 @@ export class Dapp extends Component {
 					<Header />
 					<Options handleOptionsSubmit={this.handleOptionsSubmit} values={this.state.values} />
 					<Loading />
+					<Footer />
 				</>
 			);
 		}
@@ -171,6 +173,7 @@ export class Dapp extends Component {
 					<Header />
 					<Options handleOptionsSubmit={this.handleOptionsSubmit} values={this} />
 					<Listings listings={this.state.listings} contract={this.aavegotchiContract} />
+					<Footer />
 				</>
 			)
 		}
@@ -180,6 +183,7 @@ export class Dapp extends Component {
 				<Header />
 				<Options handleOptionsSubmit={this.handleOptionsSubmit} values={this} />
 				<NoListings />
+				<Footer />
 			</>
 		);
 	}
