@@ -5,7 +5,7 @@ export class Header extends Component {
 		return (
 			<>
 				<header>
-					<h1>Aavegotchi Baazaar Difference Finder</h1>
+					<h1>Aavegotchi Baazaar Hunter</h1>
 				</header>
 			</>
 		)
