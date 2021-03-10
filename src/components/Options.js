@@ -10,12 +10,10 @@ export class Options extends Component {
 			{
 				label: 'Wearable',
 				value: '0',
-				erc: '1155',
 			},
 			{
 				label: 'Consumable',
 				value: '2',
-				erc: '1155',
 			},
 		];
 	}
