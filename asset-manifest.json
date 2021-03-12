@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Aavegotchi-Baazaar-Difference-Finder/static/css/main.45d13a7d.chunk.css",
-    "main.js": "/Aavegotchi-Baazaar-Difference-Finder/static/js/main.21ca431e.chunk.js",
-    "main.js.map": "/Aavegotchi-Baazaar-Difference-Finder/static/js/main.21ca431e.chunk.js.map",
+    "main.css": "/Aavegotchi-Baazaar-Difference-Finder/static/css/main.61f9221a.chunk.css",
+    "main.js": "/Aavegotchi-Baazaar-Difference-Finder/static/js/main.c095619b.chunk.js",
+    "main.js.map": "/Aavegotchi-Baazaar-Difference-Finder/static/js/main.c095619b.chunk.js.map",
     "runtime-main.js": "/Aavegotchi-Baazaar-Difference-Finder/static/js/runtime-main.fd8e06ee.js",
     "runtime-main.js.map": "/Aavegotchi-Baazaar-Difference-Finder/static/js/runtime-main.fd8e06ee.js.map",
-    "static/js/2.e7eec492.chunk.js": "/Aavegotchi-Baazaar-Difference-Finder/static/js/2.e7eec492.chunk.js",
-    "static/js/2.e7eec492.chunk.js.map": "/Aavegotchi-Baazaar-Difference-Finder/static/js/2.e7eec492.chunk.js.map",
+    "static/js/2.bfbfcff8.chunk.js": "/Aavegotchi-Baazaar-Difference-Finder/static/js/2.bfbfcff8.chunk.js",
+    "static/js/2.bfbfcff8.chunk.js.map": "/Aavegotchi-Baazaar-Difference-Finder/static/js/2.bfbfcff8.chunk.js.map",
     "static/js/3.3c94910e.chunk.js": "/Aavegotchi-Baazaar-Difference-Finder/static/js/3.3c94910e.chunk.js",
     "static/js/3.3c94910e.chunk.js.map": "/Aavegotchi-Baazaar-Difference-Finder/static/js/3.3c94910e.chunk.js.map",
     "index.html": "/Aavegotchi-Baazaar-Difference-Finder/index.html",
-    "static/css/main.45d13a7d.chunk.css.map": "/Aavegotchi-Baazaar-Difference-Finder/static/css/main.45d13a7d.chunk.css.map",
-    "static/js/2.e7eec492.chunk.js.LICENSE.txt": "/Aavegotchi-Baazaar-Difference-Finder/static/js/2.e7eec492.chunk.js.LICENSE.txt"
+    "static/css/main.61f9221a.chunk.css.map": "/Aavegotchi-Baazaar-Difference-Finder/static/css/main.61f9221a.chunk.css.map",
+    "static/js/2.bfbfcff8.chunk.js.LICENSE.txt": "/Aavegotchi-Baazaar-Difference-Finder/static/js/2.bfbfcff8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fd8e06ee.js",
-    "static/js/2.e7eec492.chunk.js",
-    "static/css/main.45d13a7d.chunk.css",
-    "static/js/main.21ca431e.chunk.js"
+    "static/js/2.bfbfcff8.chunk.js",
+    "static/css/main.61f9221a.chunk.css",
+    "static/js/main.c095619b.chunk.js"
   ]
 }
