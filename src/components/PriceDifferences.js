@@ -3,13 +3,18 @@ import { BigNumber } from 'ethers';
 import { Options } from './Options';
 import { Loading } from './Loading';
 import { NoListings } from './NoListings';
+import { Contract } from './Contract';
 
-export class Listings extends Component {
+export class PriceDifferences extends Component {
+	_mounted = false;
+
 	constructor(props) {
 		super(props);
 
-		// Get the connected contract
-		this.contract = this.props.contract;
+		// Get the contract
+		this.contract = new Contract();
+		// Get the connection
+		this.connection = this.contract.getConnection();
 
 		// Bind form handler this
 		this.handleOptionsSubmit = this.handleOptionsSubmit.bind(this);
@@ -29,7 +34,12 @@ export class Listings extends Component {
 	}
 
 	componentDidMount() {
+		this._mounted = true;
 		this.outputListings();
+	}
+
+	componentWillUnmount() {
+		this._mounted = false;
 	}
 
 	orderItems(listing) {
@@ -38,10 +48,10 @@ export class Listings extends Component {
 
 	async groupListings() {
 		// Get the listings in the baazaar
-		const listings = await this.contract.getERC1155Listings(
+		const listings = await this.connection.getERC1155Listings(
 			this.state.values.category,
 			'listed',
-			3000
+			1500
 		);
 
 		// Set an object to store the formatted listings
@@ -112,8 +122,8 @@ export class Listings extends Component {
 		 * However, it's both too slow, and the result is too large
 		 * The given number cause a MetaMask crash. It can't estimate gas
 		 * 
-		 * const listingAddEvent = this.contract.filters.ERC1155ListingAdd();
-		 * const listingCount = await this.contract.queryFilter(listingAddEvent);
+		 * const listingAddEvent = this.connection.filters.ERC1155ListingAdd();
+		 * const listingCount = await this.connection.queryFilter(listingAddEvent);
 		 */
 
 		// Get the grouped listings
@@ -131,9 +141,12 @@ export class Listings extends Component {
 		// If there's no data returned (nothing made it through the price difference check)
 		// Set the tables to an empty obj and break
 		if (!Object.keys(data).length) {
-			this.setState({
-				tables: {},
-			});
+
+			if (this._mounted) {
+				this.setState({
+					tables: {},
+				});
+			}
 
 			return;
 		}
@@ -158,7 +171,7 @@ export class Listings extends Component {
 			}
 
 			// Get items name
-			const itemDetails = await this.contract.getItemType(item);
+			const itemDetails = await this.connection.getItemType(item);
 			const name = itemDetails[0];
 
 			const table = (
@@ -183,9 +196,11 @@ export class Listings extends Component {
 
 			results.push(table);
 
-			this.setState({
-				tables: results,
-			});
+			if (this._mounted) {
+				this.setState({
+					tables: results,
+				});
+			}
 		}
 	}
 
