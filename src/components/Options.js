@@ -77,10 +77,10 @@ export class Options extends Component {
 				label: 'Open Portal',
 				value: '2',
 			},
-			{
-				label: 'Aavegotchi',
-				value: '3',
-			},
+			// {
+			// 	label: 'Aavegotchi',
+			// 	value: '3',
+			// },
 		];
 
 		const visibilityOptions = [
