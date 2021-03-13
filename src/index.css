@@ -104,7 +104,7 @@ footer p:first-of-type {
 .options__form label {
 	display: flex;
 	align-items: center;
-	font-size: 1rem;
+	font-size: .9rem;
 	color: #fff;
 }
 
@@ -222,4 +222,25 @@ tbody tr:hover {
 	max-width: 840px;
 	margin: 1em auto 0;
 	line-height: 2;
+}
+
+.filtering__card {
+	background-color: #fff;
+	border: 7px solid black;
+	text-decoration: none;
+}
+
+.card__price {
+	display: flex;
+	align-items: center;
+}
+
+.card__price p {
+	margin: 0 0 0 .5em;
+	color: #000;
+}
+
+.card__ghst {
+	width: 32px;
+	height: 32px;
 }
