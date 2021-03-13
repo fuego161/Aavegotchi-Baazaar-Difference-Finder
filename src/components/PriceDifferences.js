@@ -65,9 +65,9 @@ export class PriceDifferences extends Component {
 			const formattedListingId = listingId.toNumber();
 	
 			// Divide the price in wei to get the value in GHST
-			const formattedpriceInWei = priceInWei.div(this.divideBy);
+			const formattedPriceInWei = priceInWei.div(this.divideBy);
 			// We know this will be a safe low number now
-			const priceInGHST = formattedpriceInWei.toNumber();
+			const priceInGHST = formattedPriceInWei.toNumber();
 
 			// If the type ID doesn't exist as a key, add it
 			if (!formattedListings.hasOwnProperty(formattedTypeId)) formattedListings[formattedTypeId] = [];
