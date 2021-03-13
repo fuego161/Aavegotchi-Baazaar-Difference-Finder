@@ -5,19 +5,136 @@ export class Options extends Component {
 		super(props);
 
 		this.values = this.props.values;
+		this.view = this.props.view;
 
-		this.categoryOptions = [
+		this.PriceDifferenceOptions = this.PriceDifferenceOptions.bind(this);
+		this.FilteringOptions = this.FilteringOptions.bind(this);
+	}
+
+	SelectFields(props) {
+		return (
+			<label>
+				<p>{props.label}:</p>
+
+				<select
+					name={props.name}
+					className="options__input options__input--select"
+					defaultValue={props.initialValue}
+				>
+					{props.options.map((option) => (
+						<option key={option.value} value={option.value}>
+							{option.label}
+						</option>
+					))}
+				</select>
+			</label>
+		);
+	}
+
+	PriceDifferenceOptions(props) {
+		const categoryOptions = [
 			{
 				label: 'Wearable',
 				value: '0',
-				erc: '1155',
 			},
 			{
 				label: 'Consumable',
 				value: '2',
-				erc: '1155',
 			},
 		];
+
+		return (
+			<>
+				<this.SelectFields
+					label="Collections"
+					name="category"
+					options={categoryOptions}
+					initialValue={props.initialValue}
+				/>
+				<label>
+					Percentage Difference:
+
+					<input
+						name="difference"
+						className="options__input"
+						type="number"
+						min="0"
+						max="99"
+						defaultValue={this.values.valueDifference}
+					/>
+				</label>
+			</>
+		);
+	}
+
+	FilteringOptions(props) {
+		const categoryOptions = [
+			{
+				label: 'Closed Portal',
+				value: '0',
+			},
+			{
+				label: 'Open Portal',
+				value: '2',
+			},
+			// {
+			// 	label: 'Aavegotchi',
+			// 	value: '3',
+			// },
+		];
+
+		const visibilityOptions = [
+			{
+				label: 'All',
+				value: '0',
+			},
+			{
+				label: 'Exclude Baazaar',
+				value: '1',
+			},
+			{
+				label: 'Baazaar Only',
+				value: '2',
+			},
+		];
+
+		const orderOptions = [
+			{
+				label: 'Recent',
+				value: '0',
+			},
+			{
+				label: 'Ascending',
+				value: '1',
+			},
+			{
+				label: 'Descending',
+				value: '2',
+			},
+		];
+
+		return (
+			<>
+				<this.SelectFields
+					name="category"
+					label="Type"
+					options={categoryOptions}
+					initialValue={props.initialValues.category}
+				/>
+				<this.SelectFields
+					name="visibility"
+					label="Visibility"
+					options={visibilityOptions}
+					initialValue={props.initialValues.visibility}
+				/>
+				<this.SelectFields
+					name="order"
+					label="Order"
+					options={orderOptions}
+					initialValue={props.initialValues.visibility}
+				/>
+			</>
+		);
 	}
 
 	render() {
@@ -25,36 +142,12 @@ export class Options extends Component {
 			<div className="options">
 				<form className="options__form" onSubmit={this.props.handleOptionsSubmit}>
 
-					<label>
-						<p>Collections:</p>
+					{this.view === 'price-differences'
+						? <this.PriceDifferenceOptions initialValue={this.values.category} />
+						: <this.FilteringOptions initialValues={this.values} />
+					}
 
-						<select
-							name="category"
-							className="options__input options__input--select"
-							defaultValue={this.values.category}
-						>
-							{this.categoryOptions.map((option) => (
-								<option key={option.value} value={option.value}>
-									{option.label}
-								</option>
-							))}
-						</select>
-					</label>
-
-					<label>
-						Percentage Difference:
-
-						<input
-							name="difference"
-							className="options__input"
-							type="number"
-							min="0"
-							max="99"
-							defaultValue={this.values.valueDifference}
-						/>
-					</label>
-
-					<input className="options__input options__input--submit" type="submit" value="Search"/>
+					<input className="options__input options__input--submit" type="submit" value="Go" disabled={this.props.disabledSubmit} />
 
 				</form>
 			</div>
