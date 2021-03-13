@@ -3,7 +3,7 @@ import { BigNumber } from 'ethers';
 import { Options } from './Options';
 import { Loading } from './Loading';
 import { NoListings } from './NoListings';
-import { Contract } from './Contract';
+import Contract from './Contract';
 
 export class PriceDifferences extends Component {
 	_mounted = false;
@@ -11,10 +11,8 @@ export class PriceDifferences extends Component {
 	constructor(props) {
 		super(props);
 
-		// Get the contract
-		this.contract = new Contract();
 		// Get the connection
-		this.connection = this.contract.getConnection();
+		this.connection = Contract.CONNECTION;
 
 		// Bind form handler this
 		this.handleOptionsSubmit = this.handleOptionsSubmit.bind(this);

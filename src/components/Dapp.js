@@ -14,6 +14,3 @@ export class Dapp extends Component {
 		);
 	}
 }
-
-
-
