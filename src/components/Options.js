@@ -5,8 +5,34 @@ export class Options extends Component {
 		super(props);
 
 		this.values = this.props.values;
+		this.view = this.props.view;
 
-		this.categoryOptions = [
+		this.PriceDifferenceOptions = this.PriceDifferenceOptions.bind(this);
+		this.FilteringOptions = this.FilteringOptions.bind(this);
+	}
+
+	SelectFields(props) {
+		return (
+			<label>
+				<p>{props.label}:</p>
+
+				<select
+					name="category"
+					className="options__input options__input--select"
+					defaultValue={props.initialValue}
+				>
+					{props.options.map((option) => (
+						<option key={option.value} value={option.value}>
+							{option.label}
+						</option>
+					))}
+				</select>
+			</label>
+		);
+	}
+
+	PriceDifferenceOptions(props) {
+		const categoryOptions = [
 			{
 				label: 'Wearable',
 				value: '0',
@@ -16,6 +42,63 @@ export class Options extends Component {
 				value: '2',
 			},
 		];
+
+		return (
+			<>
+				<this.SelectFields label="Collections" options={categoryOptions} initialValue={props.initialValue} />
+				<label>
+					Percentage Difference:
+
+					<input
+						name="difference"
+						className="options__input"
+						type="number"
+						min="0"
+						max="99"
+						defaultValue={this.values.valueDifference}
+					/>
+				</label>
+			</>
+		);
+	}
+
+	FilteringOptions(props) {
+		const categoryOptions = [
+			{
+				label: 'Closed Portal',
+				value: '0',
+			},
+			{
+				label: 'Open Portal',
+				value: '2',
+			},
+			{
+				label: 'Aavegotchi',
+				value: '3',
+			},
+		];
+
+		const visibilityOptions = [
+			{
+				label: 'All',
+				value: '0',
+			},
+			{
+				label: 'Exclude Baazaar',
+				value: '1',
+			},
+			{
+				label: 'Baazaar Listings',
+				value: '2',
+			},
+		];
+
+		return (
+			<>
+				<this.SelectFields label="Collections" options={categoryOptions} initialValue={props.initialValue} />
+				<this.SelectFields label="Visibility" options={visibilityOptions} initialValue={props.initialValue} />
+			</>
+		);
 	}
 
 	render() {
@@ -23,34 +106,10 @@ export class Options extends Component {
 			<div className="options">
 				<form className="options__form" onSubmit={this.props.handleOptionsSubmit}>
 
-					<label>
-						<p>Collections:</p>
-
-						<select
-							name="category"
-							className="options__input options__input--select"
-							defaultValue={this.values.category}
-						>
-							{this.categoryOptions.map((option) => (
-								<option key={option.value} value={option.value}>
-									{option.label}
-								</option>
-							))}
-						</select>
-					</label>
-
-					<label>
-						Percentage Difference:
-
-						<input
-							name="difference"
-							className="options__input"
-							type="number"
-							min="0"
-							max="99"
-							defaultValue={this.values.valueDifference}
-						/>
-					</label>
+					{this.view === 'price-differences'
+						? <this.PriceDifferenceOptions initialValue={this.values.category} />
+						: <this.FilteringOptions initialValue={this.values.category} />
+					}
 
 					<input className="options__input options__input--submit" type="submit" value="Search"/>
 

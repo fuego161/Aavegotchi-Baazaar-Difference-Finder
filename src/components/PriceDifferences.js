@@ -223,14 +223,14 @@ export class PriceDifferences extends Component {
 		if (!this.state.tables) {
 			return (
 				<>
-					<Options handleOptionsSubmit={this.handleOptionsSubmit} values={this.state.values} />
+					<Options handleOptionsSubmit={this.handleOptionsSubmit} values={this.state.values} view={this.props.view} />
 					<Loading />
 				</>
 			);
 		} else if (Object.keys(this.state.tables).length) {
 			return (
 				<>
-					<Options handleOptionsSubmit={this.handleOptionsSubmit} values={this.state.values} />
+					<Options handleOptionsSubmit={this.handleOptionsSubmit} values={this.state.values} view={this.props.view} />
 					<div className="listings">{this.state.tables}</div>
 				</>
 			);
@@ -238,7 +238,7 @@ export class PriceDifferences extends Component {
 		
 		return (
 			<>
-				<Options handleOptionsSubmit={this.handleOptionsSubmit} values={this.state.values} />
+				<Options handleOptionsSubmit={this.handleOptionsSubmit} values={this.state.values} view={this.props.view} />
 				<NoListings />
 			</>
 		);

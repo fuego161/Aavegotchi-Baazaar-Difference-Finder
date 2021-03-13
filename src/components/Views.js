@@ -9,10 +9,10 @@ export class Views extends Component {
 
 	render() {
 		if (this.props.view === 'price-differences') {
-			return <PriceDifferences />
+			return <PriceDifferences view={this.props.view} />
 		}
 		else if (this.props.view === 'filtering') {
-			return <Filtering />
+			return <Filtering view={this.props.view} />
 		}
 	}
 }
