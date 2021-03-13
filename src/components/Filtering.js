@@ -138,10 +138,31 @@ export class Filtering extends Component {
 			const { listingId, priceInGHST } = listing;
 
 			if (isAavegotchi) {
+				const aavegotchi = await this.connection.getAavegotchiListing(listingId);
+
+				const {
+					tokenId,
+					name,
+					kinship,
+					experience,
+					level,
+					hauntId,
+					baseRarityScore,
+					modifiedRarityScore,
+				} = aavegotchi.aavegotchiInfo_;
+
 				const props = {
 					listingId,
 					priceInGHST,
 					key: listingId,
+					formattedTokenId: tokenId.toNumber(),
+					name,
+					formattedKinship: kinship.toNumber(),
+					formattedExperience: experience.toNumber(),
+					formattedLevel: level.toNumber(),
+					hauntId: hauntId.toNumber(),
+					formattedBRS: baseRarityScore.toNumber(),
+					formattedMRS: modifiedRarityScore.toNumber(),
 				};
 
 				const item = <AavegotchiCard {...props} />;
