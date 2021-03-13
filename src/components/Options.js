@@ -17,7 +17,7 @@ export class Options extends Component {
 				<p>{props.label}:</p>
 
 				<select
-					name="category"
+					name={props.name}
 					className="options__input options__input--select"
 					defaultValue={props.initialValue}
 				>
@@ -45,7 +45,12 @@ export class Options extends Component {
 
 		return (
 			<>
-				<this.SelectFields label="Collections" options={categoryOptions} initialValue={props.initialValue} />
+				<this.SelectFields
+					label="Collections"
+					name="category"
+					options={categoryOptions}
+					initialValue={props.initialValue}
+				/>
 				<label>
 					Percentage Difference:
 
@@ -88,15 +93,46 @@ export class Options extends Component {
 				value: '1',
 			},
 			{
-				label: 'Baazaar Listings',
+				label: 'Baazaar Only',
+				value: '2',
+			},
+		];
+
+		const orderOptions = [
+			{
+				label: 'Recent',
+				value: '0',
+			},
+			{
+				label: 'Ascending',
+				value: '1',
+			},
+			{
+				label: 'Descending',
 				value: '2',
 			},
 		];
 
 		return (
 			<>
-				<this.SelectFields label="Collections" options={categoryOptions} initialValue={props.initialValue} />
-				<this.SelectFields label="Visibility" options={visibilityOptions} initialValue={props.initialValue} />
+				<this.SelectFields
+					name="category"
+					label="Type"
+					options={categoryOptions}
+					initialValue={props.initialValues.category}
+				/>
+				<this.SelectFields
+					name="visibility"
+					label="Visibility"
+					options={visibilityOptions}
+					initialValue={props.initialValues.visibility}
+				/>
+				<this.SelectFields
+					name="order"
+					label="Order"
+					options={orderOptions}
+					initialValue={props.initialValues.visibility}
+				/>
 			</>
 		);
 	}
@@ -108,10 +144,10 @@ export class Options extends Component {
 
 					{this.view === 'price-differences'
 						? <this.PriceDifferenceOptions initialValue={this.values.category} />
-						: <this.FilteringOptions initialValue={this.values.category} />
+						: <this.FilteringOptions initialValues={this.values} />
 					}
 
-					<input className="options__input options__input--submit" type="submit" value="Search"/>
+					<input className="options__input options__input--submit" type="submit" value="Go"/>
 
 				</form>
 			</div>
