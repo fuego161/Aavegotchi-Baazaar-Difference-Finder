@@ -15,7 +15,7 @@ export class ViewSelector extends Component {
 				value: 'price-differences',
 			},
 			{
-				label: 'Coming Soon',
+				label: 'Baazaar Filtering',
 				value: 'filtering',
 			},
 		];
