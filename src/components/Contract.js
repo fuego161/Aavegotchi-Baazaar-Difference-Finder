@@ -5,9 +5,6 @@ export default class Contract {
 	// Set the contract address
 	static address = '0x86935F11C86623deC8a25696E1C19a8659CbF95d';
 
-	// Get the contract ABI
-	static abi = abi;
-
 	// Set the to be defined connection
 	static CONNECTION = Contract.CONNECTION || new Contract().init();
 
@@ -16,7 +13,7 @@ export default class Contract {
 		const provider = new ethers.providers.JsonRpcProvider('https://rpc-mainnet.matic.network');
 
 		// Get the aavegotchi contract
-		const contract = new ethers.Contract(Contract.address, Contract.abi, provider);
+		const contract = new ethers.Contract(Contract.address, abi, provider);
 
 		// Store the connection
 		return contract.connect(provider);
