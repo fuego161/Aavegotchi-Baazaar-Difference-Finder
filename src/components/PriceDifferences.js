@@ -223,7 +223,7 @@ export class PriceDifferences extends Component {
 		if (!this.state.tables) {
 			return (
 				<>
-					<Options handleOptionsSubmit={this.handleOptionsSubmit} values={this.state.values} view={this.props.view} />
+					<Options handleOptionsSubmit={this.handleOptionsSubmit} values={this.state.values} view={this.props.view} disabledSubmit={true} />
 					<Loading />
 				</>
 			);

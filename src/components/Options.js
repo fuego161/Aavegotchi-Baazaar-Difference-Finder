@@ -147,7 +147,7 @@ export class Options extends Component {
 						: <this.FilteringOptions initialValues={this.values} />
 					}
 
-					<input className="options__input options__input--submit" type="submit" value="Go"/>
+					<input className="options__input options__input--submit" type="submit" value="Go" disabled={this.props.disabledSubmit} />
 
 				</form>
 			</div>
