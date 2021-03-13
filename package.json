@@ -1,8 +1,8 @@
 {
-  "name": "aavegotchi-baazaar-difference-finder",
+  "name": "aavegotchi-baazaar-hunter",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fuego161.github.io/Aavegotchi-Baazaar-Difference-Finder",
+  "homepage": "https://fuego161.github.io/aavegotchi-baazaar-hunter/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
