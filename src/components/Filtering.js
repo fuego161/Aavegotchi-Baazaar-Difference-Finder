@@ -225,7 +225,9 @@ export class Filtering extends Component {
 			return (
 				<>
 					<Options handleOptionsSubmit={this.handleOptionsSubmit} values={this.state.values} view={this.props.view} />
-					<div className="listings">{this.state.output}</div>
+					<div className={`listings listings--filtering listings--${this.state.values.category}`}>
+						{this.state.output}
+					</div>
 				</>
 			);
 		}

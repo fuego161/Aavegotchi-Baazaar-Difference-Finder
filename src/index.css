@@ -93,12 +93,12 @@ footer p:first-of-type {
 
 .options__form {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
 	padding: .75em 2.5em;
 	background-image: linear-gradient(180deg, #722CF0 0%, #FA34F3 100%);
 	border: 5px solid #ffc107;
-
 }
 
 .options__form label {
@@ -138,6 +138,9 @@ footer p:first-of-type {
 	padding: 2em;
 	border: 15px solid #ffc107;
 	background-color: #17a2b8;
+}
+.listings--filtering.listings--3 {
+	grid-template-columns: 1fr 1fr;
 }
 
 .listings--none {
@@ -228,19 +231,80 @@ tbody tr:hover {
 	background-color: #fff;
 	border: 7px solid black;
 	text-decoration: none;
+	color: #000;
+}
+
+.card__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: .75em 1em;
+}
+
+.card__name,
+.filtering__card p {
+	text-transform: uppercase;
+}
+
+.filtering__card p {
+	font-size: .85rem;
+}
+
+.card__name {
+	width: 100%;
+	margin: 0;
+	max-width: calc(100% - 168px);
+	font-size: 1rem;
+	line-height: 1.6;
+	word-wrap: anywhere;
 }
 
 .card__price {
 	display: flex;
 	align-items: center;
+	max-width: 168px;
 }
 
 .card__price p {
 	margin: 0 0 0 .5em;
-	color: #000;
 }
 
 .card__ghst {
 	width: 32px;
+	min-width: 32px;
 	height: 32px;
+	min-height: 32px;
+}
+
+.card__data {
+	padding: 1em;
+	background-color: #6f42c1;
+}
+.data {
+	display: flex;
+	margin-bottom: 1.25em;
+}
+.data:last-of-type {
+	margin-bottom: 0;
+}
+.data p {
+	margin: 0;
+	color: #fff;
+}
+.data .value {
+	margin-left: .35em;
+}
+
+/* Portals */
+.card--portal {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1em;
+}
+.card__svg {
+	width: 180px;
+}
+.card--portal .card__price {
+	margin-top: 1em;
 }
