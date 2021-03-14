@@ -14,12 +14,12 @@ export class Options extends Component {
 
 	SelectFields(props) {
 		return (
-			<label>
+			<label className="form__label">
 				<p>{props.label}:</p>
 
 				<select
 					name={props.name}
-					className="options__input options__input--select"
+					className="form__input form__input--select"
 					defaultValue={props.initialValue}
 				>
 					{props.options.map((option) => (
@@ -52,12 +52,12 @@ export class Options extends Component {
 					options={categoryOptions}
 					initialValue={props.initialValue}
 				/>
-				<label>
+				<label className="form__label">
 					Percentage Difference:
 
 					<input
 						name="difference"
-						className="options__input"
+						className="form__input"
 						type="number"
 						min="0"
 						max="99"
@@ -141,14 +141,14 @@ export class Options extends Component {
 	render() {
 		return (
 			<div className="options">
-				<form className="options__form" onSubmit={this.props.handleOptionsSubmit}>
+				<form className="options__form form" onSubmit={this.props.handleOptionsSubmit}>
 
 					{this.view === 'price-differences'
 						? <this.PriceDifferenceOptions initialValue={this.values.category} />
 						: <this.FilteringOptions initialValues={this.values} />
 					}
 
-					<input className="options__input options__input--submit" type="submit" value="Go" disabled={this.props.disabledSubmit} />
+					<input className="form__input form__input--submit" type="submit" value="Go" disabled={this.props.disabledSubmit} />
 
 				</form>
 			</div>
