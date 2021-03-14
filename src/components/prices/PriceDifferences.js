@@ -45,6 +45,33 @@ export class PriceDifferences extends Component {
 		return listing.sort((a, b) => a['priceInGHST'] - b['priceInGHST']);
 	}
 
+	calculateRarity(item) {
+		// Get the max quantity as a BigNumber
+		const { maxQuantity } = item;
+
+		// Convert maxQuantity to an int
+		const maxQuantityInt = parseInt(maxQuantity);
+
+		if (maxQuantityInt < 10) {
+			return 'Godlike'
+		}
+		else if (maxQuantityInt >= 10 && maxQuantityInt < 100) {
+			return 'Mythical';
+		}
+		else if (maxQuantityInt >= 100 && maxQuantityInt < 250) {
+			return 'Legendary';
+		}
+		else if (maxQuantityInt >= 250 && maxQuantityInt < 500) {
+			return 'Rare';
+		}
+		else if (maxQuantityInt >= 500 && maxQuantityInt < 1000) {
+			return 'Uncommon';
+		}
+		else if (maxQuantityInt >= 1000) {
+			return 'Common';
+		}
+	}
+
 	async groupListings() {
 		// Get the listings in the baazaar
 		const listings = await this.connection.getERC1155Listings(
@@ -61,16 +88,10 @@ export class PriceDifferences extends Component {
 			// Get the data needed from the listing
 			const { listingId, erc1155TypeId, priceInWei } = listing;
 
-			// Get the item type
-			const itemType = await this.connection.getItemType(erc1155TypeId);
-
-			console.log(itemType);
-
 			// We know these numbers are safe for JS, so convert them
 			const formattedTypeId = erc1155TypeId.toNumber();
 			const formattedListingId = listingId.toNumber();
 
-	
 			// Divide the price in wei to get the value in GHST
 			const formattedPriceInWei = priceInWei.div(this.divideBy);
 			// We know this will be a safe low number now
@@ -175,14 +196,21 @@ export class PriceDifferences extends Component {
 				tableRows.push(row);
 			}
 
-			// Get items name
+			// Get the item type details
 			const itemDetails = await this.connection.getItemType(item);
+			
+			// Get items name
 			const name = itemDetails[0];
+			// Get the items rarity
+			const rarity = this.calculateRarity(itemDetails);
 
 			const table = (
-				<div className="listings__card card" key={item}>
+				<div className="listings__card card card--listing" key={item}>
 
-					<h2 className="card__title">{name} <small>({item})</small></h2>
+					<div className="card__header">
+						<h2 className="card__title">{name} <small>({item})</small></h2>
+						<h3 className="card__rarity">{ rarity }</h3>
+					</div>
 
 					<table className="card__table">
 						<thead>
