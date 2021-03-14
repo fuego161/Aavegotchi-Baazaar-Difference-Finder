@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/aavegotchi-baazaar-hunter/static/css/main.20199fe8.chunk.css",
-    "main.js": "/aavegotchi-baazaar-hunter/static/js/main.a3c0c018.chunk.js",
-    "main.js.map": "/aavegotchi-baazaar-hunter/static/js/main.a3c0c018.chunk.js.map",
-    "runtime-main.js": "/aavegotchi-baazaar-hunter/static/js/runtime-main.3baaf198.js",
-    "runtime-main.js.map": "/aavegotchi-baazaar-hunter/static/js/runtime-main.3baaf198.js.map",
-    "static/js/2.e0ac508d.chunk.js": "/aavegotchi-baazaar-hunter/static/js/2.e0ac508d.chunk.js",
-    "static/js/2.e0ac508d.chunk.js.map": "/aavegotchi-baazaar-hunter/static/js/2.e0ac508d.chunk.js.map",
-    "static/js/3.f2c4bb32.chunk.js": "/aavegotchi-baazaar-hunter/static/js/3.f2c4bb32.chunk.js",
-    "static/js/3.f2c4bb32.chunk.js.map": "/aavegotchi-baazaar-hunter/static/js/3.f2c4bb32.chunk.js.map",
+    "main.css": "/aavegotchi-baazaar-hunter/static/css/main.61f913e7.chunk.css",
+    "main.js": "/aavegotchi-baazaar-hunter/static/js/main.4231256f.chunk.js",
+    "main.js.map": "/aavegotchi-baazaar-hunter/static/js/main.4231256f.chunk.js.map",
+    "runtime-main.js": "/aavegotchi-baazaar-hunter/static/js/runtime-main.70114eec.js",
+    "runtime-main.js.map": "/aavegotchi-baazaar-hunter/static/js/runtime-main.70114eec.js.map",
+    "static/js/2.ce9e4044.chunk.js": "/aavegotchi-baazaar-hunter/static/js/2.ce9e4044.chunk.js",
+    "static/js/2.ce9e4044.chunk.js.map": "/aavegotchi-baazaar-hunter/static/js/2.ce9e4044.chunk.js.map",
+    "static/js/3.52dc1d71.chunk.js": "/aavegotchi-baazaar-hunter/static/js/3.52dc1d71.chunk.js",
+    "static/js/3.52dc1d71.chunk.js.map": "/aavegotchi-baazaar-hunter/static/js/3.52dc1d71.chunk.js.map",
     "index.html": "/aavegotchi-baazaar-hunter/index.html",
-    "static/css/main.20199fe8.chunk.css.map": "/aavegotchi-baazaar-hunter/static/css/main.20199fe8.chunk.css.map",
-    "static/js/2.e0ac508d.chunk.js.LICENSE.txt": "/aavegotchi-baazaar-hunter/static/js/2.e0ac508d.chunk.js.LICENSE.txt",
+    "static/css/main.61f913e7.chunk.css.map": "/aavegotchi-baazaar-hunter/static/css/main.61f913e7.chunk.css.map",
+    "static/js/2.ce9e4044.chunk.js.LICENSE.txt": "/aavegotchi-baazaar-hunter/static/js/2.ce9e4044.chunk.js.LICENSE.txt",
     "static/media/closed-portal.2ee2cf0e.svg": "/aavegotchi-baazaar-hunter/static/media/closed-portal.2ee2cf0e.svg",
     "static/media/ghst-token.2f3a590f.svg": "/aavegotchi-baazaar-hunter/static/media/ghst-token.2f3a590f.svg",
     "static/media/open-portal.e7bbe9d1.svg": "/aavegotchi-baazaar-hunter/static/media/open-portal.e7bbe9d1.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3baaf198.js",
-    "static/js/2.e0ac508d.chunk.js",
-    "static/css/main.20199fe8.chunk.css",
-    "static/js/main.a3c0c018.chunk.js"
+    "static/js/runtime-main.70114eec.js",
+    "static/js/2.ce9e4044.chunk.js",
+    "static/css/main.61f913e7.chunk.css",
+    "static/js/main.4231256f.chunk.js"
   ]
 }
