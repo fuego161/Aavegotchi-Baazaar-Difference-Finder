@@ -61,27 +61,6 @@ footer {
 .card {
 	$card: &;
 
-	&__header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: .75em 1em;
-	}
-
-	&__title {
-		margin: 0;
-		padding: .65em .75rem;
-		background: #000;
-		font-family: 'Press Start 2P', cursive;
-		font-size: .9rem;
-		color: #fff;
-		line-height: 1.5;
-
-		small {
-			font-size: 65%;
-		}
-	}
-
 	&__name {
 		width: 100%;
 		margin: 0;
@@ -113,7 +92,41 @@ footer {
 		padding: 1em;
 		background-color: #6f42c1;
 	}
+
+	&--listing {
+		#{$card}__header {
+			padding: .65em .75rem;
+			background: #000;
+		}
+
+		#{$card}__title {
+			margin: 0;
+			font-size: .9rem;
+			color: #fff;
+			line-height: 1.5;
 	
+			small {
+				font-size: 65%;
+			}
+		}
+
+		#{$card}__rarity {
+			margin: .8em 0 0;
+			color: #dccef0;
+			font-size: .7rem;
+			letter-spacing: .6px;
+		}
+	}
+
+	&--filtering {
+		#{$card}__header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: .75em 1em;
+		}
+	}
+
 	&--portal {
 		display: flex;
 		flex-direction: column;

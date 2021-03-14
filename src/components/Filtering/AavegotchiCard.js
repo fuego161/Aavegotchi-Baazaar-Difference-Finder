@@ -28,7 +28,7 @@ export class AavegotchiCard extends Component {
 	render() {
 		return (
 			<a
-				className="filtering__card card card--aavegotchi"
+				className="filtering__card card card--filtering card--aavegotchi"
 				href={`https://aavegotchi.com/baazaar/erc721/${this.props.listingId}`}
 				rel="noreferrer"
 				target="_blank"

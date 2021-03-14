@@ -15,7 +15,7 @@ export class PortalCard extends Component {
 	render() {
 		return (
 			<a
-				className="filtering__card card card--portal"
+				className="filtering__card card card--filtering card--portal"
 				href={`https://aavegotchi.com/baazaar/erc721/${this.listingId}`}
 				rel="noreferrer"
 				target="_blank"
