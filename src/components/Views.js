@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { PriceDifferences } from './PriceDifferences';
-import { Filtering } from './Filtering';
+import { PriceDifferences } from './prices/PriceDifferences';
+import { Filtering } from './filtering/Filtering';
 
 export class Views extends Component {
 	render() {

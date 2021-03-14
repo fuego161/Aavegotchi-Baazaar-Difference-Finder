@@ -1,4 +1,4 @@
-import abi from '../diamondABI/diamond.json';
+import abi from '../../diamondABI/diamond.json';
 import { ethers } from 'ethers';
 
 export default class Contract {

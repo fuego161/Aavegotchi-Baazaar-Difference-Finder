@@ -1,10 +1,10 @@
 import { Component } from 'react';
 import { BigNumber } from 'ethers';
-import { Options } from './Options';
-import { Loading } from './Loading';
+import { Options } from '../common/Options';
+import { Loading } from '../common/Loading';
 import { NoListings } from './NoListings';
-import Contract from './Contract';
-import '../scss/listings.scss';
+import Contract from '../common/Contract';
+import './listings.scss';
 
 export class PriceDifferences extends Component {
 	_mounted = false;
@@ -50,7 +50,7 @@ export class PriceDifferences extends Component {
 		const listings = await this.connection.getERC1155Listings(
 			this.state.values.category,
 			'listed',
-			1500
+			1510
 		);
 
 		// Set an object to store the formatted listings
@@ -60,10 +60,16 @@ export class PriceDifferences extends Component {
 		for (const listing of listings) {
 			// Get the data needed from the listing
 			const { listingId, erc1155TypeId, priceInWei } = listing;
-	
+
+			// Get the item type
+			const itemType = await this.connection.getItemType(erc1155TypeId);
+
+			console.log(itemType);
+
 			// We know these numbers are safe for JS, so convert them
 			const formattedTypeId = erc1155TypeId.toNumber();
 			const formattedListingId = listingId.toNumber();
+
 	
 			// Divide the price in wei to get the value in GHST
 			const formattedPriceInWei = priceInWei.div(this.divideBy);
