@@ -15,6 +15,10 @@ body {
 	word-spacing: -.4em;
 }
 
+body * {
+	box-sizing: border-box;
+}
+
 html,
 body {
 	height: 100%;

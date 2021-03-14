@@ -7,7 +7,7 @@ export class ViewSelector extends Component {
 		super(props);
 
 		this.state = {
-			view: 'price-differences',
+			view: 'intro',
 		};
 
 		this.views = [
