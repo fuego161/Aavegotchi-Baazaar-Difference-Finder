@@ -6,7 +6,7 @@ export class Intro extends Component {
 		return (
 			<>
 				<div className="intro">
-					<p className="intro__text">This app is built to help you find deals within the Aavegotchi Baazaar. There are two tools within this app. Toggle between these with the two buttons above, and see an overview of them below</p>
+					<p className="intro__text">This app is built to help you find deals within the Aavegotchi Baazaar. There are two tools within this app, toggle between these with the two buttons above. See an overview of them below.</p>
 
 					<div className="intro__box">
 						<h2>Price Difference Finder</h2>
