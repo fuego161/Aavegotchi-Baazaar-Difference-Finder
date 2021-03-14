@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import '../scss/options.scss';
 
 export class Options extends Component {
 	constructor(props) {

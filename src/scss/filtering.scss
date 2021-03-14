@@ -1,0 +1,46 @@
+.filtering {
+	padding: 2em;
+	background-color: #17a2b8;
+	border: 15px solid #ffc107;
+	text-align: center;
+
+	h3 {
+		margin-top: 0;
+	}
+
+	p {
+		max-width: 840px;
+		margin: 1em auto 0;
+		line-height: 2;
+	}
+
+	&__card {
+		background-color: #fff;
+		border: 7px solid black;
+		text-decoration: none;
+		color: #000;
+
+		p {
+			font-size: .85rem;
+			text-transform: uppercase;
+		}
+	}
+}
+
+.data {
+	display: flex;
+	margin-bottom: 1.25em;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+
+	p {
+		margin: 0;
+		color: #fff;
+	}
+
+	.value {
+		margin-left: .35em;
+	}
+}

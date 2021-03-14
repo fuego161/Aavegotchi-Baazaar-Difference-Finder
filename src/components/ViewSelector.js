@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Views } from './Views';
+import '../scss/view-selector.scss';
 
 export class ViewSelector extends Component {
 	constructor(props) {

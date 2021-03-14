@@ -4,6 +4,7 @@ import { Options } from './Options';
 import { Loading } from './Loading';
 import { NoListings } from './NoListings';
 import Contract from './Contract';
+import '../scss/listings.scss';
 
 export class PriceDifferences extends Component {
 	_mounted = false;

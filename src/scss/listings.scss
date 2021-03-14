@@ -1,0 +1,30 @@
+.listings {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	gap: 2em;
+	grid-template-areas: '.';
+	padding: 2em;
+	border: 15px solid #ffc107;
+	background-color: #17a2b8;
+
+	&--3 {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	&--none {
+		display: block;
+	}
+
+	&__warning {
+		margin: 0;
+		text-align: center;
+		line-height: 2;
+	}
+
+	&__loading {
+		margin: 0;
+		font-size: 2rem;
+		text-align: center;
+	}
+}

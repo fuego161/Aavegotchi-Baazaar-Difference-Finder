@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './scss/general.scss';
 import { Dapp } from './components/Dapp';
 import reportWebVitals from './reportWebVitals';
 

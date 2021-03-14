@@ -5,6 +5,7 @@ import { Loading } from './Loading';
 import { PortalCard } from './Filtering/PortalCard';
 import { AavegotchiCard } from './Filtering/AavegotchiCard';
 import Contract from './Contract';
+import '../scss/filtering.scss';
 
 /**
  * Visibility values
