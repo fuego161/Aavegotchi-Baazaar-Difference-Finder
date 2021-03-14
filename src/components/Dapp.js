@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { Header } from './Header';
+import { Header } from './layout/Header';
 import { ViewSelector } from './ViewSelector';
-import { Footer } from './Footer';
+import { Footer } from './layout/Footer';
 
 export class Dapp extends Component {
 	render() {
