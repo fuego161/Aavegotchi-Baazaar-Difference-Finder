@@ -26,6 +26,7 @@ export class PriceDifferences extends Component {
 			values: {
 				category: 0,
 				valueDifference: 25,
+				rarity: 'All',
 			},
 			listings: undefined,
 			tables: undefined,
@@ -180,8 +181,22 @@ export class PriceDifferences extends Component {
 		// Set an array to store the results
 		const results = [];
 
+		// Get the selected rarity
+		const selectedRarity = this.state.values.rarity;
+
 		for (const [item, listings] of Object.entries(data)) {
 			const tableRows = [];
+
+			// Get the item type details
+			const itemDetails = await this.connection.getItemType(item);
+			
+			// Get items name
+			const name = itemDetails[0];
+			// Get the items rarity
+			const rarity = this.calculateRarity(itemDetails);
+
+			// If selected rarity isn't all and the selected rarity doesn't match rarity of the item, skip the output
+			if (selectedRarity !== 'All' && selectedRarity !== rarity) continue;
 
 			for (const listing of listings) {
 				const { listingId, priceInGHST } = listing;
@@ -195,14 +210,6 @@ export class PriceDifferences extends Component {
 
 				tableRows.push(row);
 			}
-
-			// Get the item type details
-			const itemDetails = await this.connection.getItemType(item);
-			
-			// Get items name
-			const name = itemDetails[0];
-			// Get the items rarity
-			const rarity = this.calculateRarity(itemDetails);
 
 			const table = (
 				<div className="listings__card card card--listing" key={item}>
@@ -235,6 +242,12 @@ export class PriceDifferences extends Component {
 				});
 			}
 		}
+
+		if (this._mounted && !results.length) {
+			this.setState({
+				tables: {},
+			});
+		}
 	}
 
 	handleOptionsSubmit(e) {
@@ -242,11 +255,13 @@ export class PriceDifferences extends Component {
 
 		const newCategory = parseInt(e.target.category.value);
 		const newDifference = parseInt(e.target.difference.value);
+		const newRarity = e.target.rarity.value;
 
 		this.setState({
 			values: {
 				category: newCategory,
 				valueDifference: newDifference,
+				rarity: newRarity,
 			},
 			listings: undefined,
 			tables: undefined,

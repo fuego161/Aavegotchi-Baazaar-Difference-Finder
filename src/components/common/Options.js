@@ -44,6 +44,37 @@ export class Options extends Component {
 			},
 		];
 
+		const rarityOptions = [
+			{
+				label: 'All',
+				value: 'All',
+			},
+			{
+				label: 'Common',
+				value: 'Common',
+			},
+			{
+				label: 'Uncommon',
+				value: 'Uncommon',
+			},
+			{
+				label: 'Rare',
+				value: 'Rare',
+			},
+			{
+				label: 'Legendary',
+				value: 'Legendary',
+			},
+			{
+				label: 'Mythical',
+				value: 'Mythical',
+			},
+			{
+				label: 'Godlike',
+				value: 'Godlike',
+			},
+		];
+
 		return (
 			<>
 				<this.SelectFields
@@ -52,8 +83,14 @@ export class Options extends Component {
 					options={categoryOptions}
 					initialValue={props.initialValue}
 				/>
+				<this.SelectFields
+					label="Rarity"
+					name="rarity"
+					options={rarityOptions}
+					initialValue={props.initialValue}
+				/>
 				<label className="form__label">
-					Percentage Difference:
+					Percentage:
 
 					<input
 						name="difference"
